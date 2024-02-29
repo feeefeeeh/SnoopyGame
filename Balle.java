@@ -24,7 +24,12 @@ public class Balle extends Entite {
         verifierCollisionAvecSnoopy();
     }
 
-    private void verifierCollisionAvecSnoopy() {
+    //afficher la position de la balle en temps réel
+    public void afficherPositionBalle() {
+        System.out.println("Position de la balle : (" + x + ", " + y + ")");
+    }
+
+    void verifierCollisionAvecSnoopy() {
         if (carte.getCell(x, y) == Element.SNOOPY) {
             // La balle a touché Snoopy
             // Faites perdre une vie à Snoopy et réinitialisez le niveau

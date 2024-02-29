@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Carte {
     private Snoopy snoopy;
     private final int largeur = 20; // Largeur fixe de la carte
     private final int hauteur = 10; // Hauteur fixe de la carte
     private int[][] grille; // Grille représentant le niveau
+    private List<Balle> balles = new ArrayList<>();
 
     public static final String[] MOTS_DE_PASSE = { "mdpNiveau1", "mdpNiveau2", "mdpNiveau3" }; // Mots de passe pour
                                                                                                // chaque niveau
@@ -34,6 +38,10 @@ public class Carte {
             default:
                 throw new IllegalArgumentException("Niveau inconnu: " + niveau);
         }
+    }
+
+    public void ajouterBalle(Balle balle) {
+        balles.add(balle);
     }
 
     public int[] trouverPositionInitialeSnoopy() {
@@ -122,4 +130,9 @@ public class Carte {
     public Snoopy getSnoopy() {
         return snoopy;
     }
+
+    public List<Balle> getBalles() {
+        return this.balles;
+    }
+
 }

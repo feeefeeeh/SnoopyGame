@@ -4,7 +4,7 @@ public class Snoopy extends Entite {
 
     public Snoopy(Carte carte, int x, int y, Jeu jeu) {
         super(carte, x, y);
-        this.vies = 3; // Snoopy commence avec 3 vies
+        this.vies = 1; // Snoopy commence avec 3 vies
         this.jeu = jeu;
     }
 
@@ -92,7 +92,9 @@ public class Snoopy extends Entite {
     public void perdreVie() {
         if (vies > 0) {
             vies--;
+            System.out.println("Snoopy a perdu une vie ! Vies restantes : " + vies);
             if (vies == 0) {
+                System.out.println("Plus de vies restantes. Game over !");
                 // Logique pour gérer la défaite ou la réinitialisation du jeu
             }
         }
